@@ -1,0 +1,19 @@
+{
+  "name": "@dao-library/database",
+  "version": "1.3.0",
+  "description": "",
+  "type": "module",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "exports": {
+    ".": "./connection.js"
+  },
+  "dependencies": {
+    "sqlite3": "^5.1.6"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "vitest": "^1.1.0"
+  }
+}

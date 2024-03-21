@@ -1,4 +1,5 @@
 import { ethers } from "ethers";
+import { registerDNN, transferDrawing, transferFraction } from "./dnn.js";
 
 const rollup_server = process.env.ROLLUP_HTTP_SERVER_URL;
 console.log("HTTP rollup_server url is " + rollup_server);
@@ -57,10 +58,7 @@ async function action_proxy(payload, address){
 
   switch(action){
     case "registerDNN":
-      result = await registerDNN(...params);
-
-      let a = await registerDrawing(...params);
-      let b = registerFraction(...params);
+      result = await registerDNN(params);
       break;
     case "transferDrawing":
       result = transferDrawing(...params);
@@ -72,29 +70,6 @@ async function action_proxy(payload, address){
       console.log("\nFailed to execute any action\n");
   }
 }
-
-// This is an internal function UNLIKE action_proxy which must be accessed externally
-function _action_proxy(actionObject){
-
-  let action = actionObject.action;
-  let params = actionObject.params;
-
-  let result;
-
-  switch(action){
-    case "addAddresses":
-        result = addAddresses(...params);
-        console.log("Execution of add address request :" + result);
-        break;
-    case "removeAddresses":
-      result = removeAddresses(...params);
-      console.log("Execution of remove address request :" + result);
-      break;
-    default:
-        console.log("Failed to execute any action");
-    }
-}
-
 
 function hexToText(hexString){
   // Remove the "0x" prefix if present

@@ -1,6 +1,7 @@
 {
   "name": "my-dapp",
   "version": "0.1.0",
+  "type": "module",
   "description": "JS DApp",
   "dependencies": {
     "ethers": "^6.7.1"
