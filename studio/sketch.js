@@ -1,4 +1,5 @@
 
+let dnn = new DNN();
 let circles = [];
 
 function setup() { 
@@ -6,7 +7,7 @@ function setup() {
   
   circles[0] = new Circle(300, 300);
   circles[1] = new Circle(250, 180);
-
+  dnn.drawings = circles;
 } 
 
 function draw() { 
@@ -42,5 +43,18 @@ function Circle(inX, inY) {
     noStroke(0);
     fill(this.col);
     ellipse(this.x, this.y, this.r * 2, this.r * 2);
+  }
+}
+
+function DNN(){
+  this.drawings = [];
+  this.fractions = [];
+
+  this.getDrawings = function() {
+    return this.drawings;
+  }
+  
+  this.getFractions = function(){
+    return this.fractions;
   }
 }
