@@ -1,19 +1,20 @@
 
-let dnn = new DNN();
-let circles = [];
+const dnn = new DNN();
+const circles = [];
+const numCircles = 10;
 
 function setup() { 
   createCanvas(600, 600);
   
-  circles[0] = new Circle(300, 300);
-  circles[1] = new Circle(250, 180);
-  dnn.drawings = circles;
+  circles[0] = new Circle(220, 300);
+  circles[1] = new Circle(100, 350);
 } 
 
 function draw() { 
   background(90);
   // check each circle...
   for (let i = 0; i < circles.length; i++) {
+   
     circles[i].display();
     //... against every other circle
     for (let j = 0; j < circles.length; j++) {
@@ -38,7 +39,7 @@ function Circle(inX, inY) {
     // than both of radii added together, then they overlap
     return dist(this.x, this.y, other.x, other.y) < this.r + other.r;
   }
-  
+
   this.display = function () {
     noStroke(0);
     fill(this.col);
@@ -48,7 +49,7 @@ function Circle(inX, inY) {
 
 function DNN(){
   this.drawings = [];
-  this.fractions = [];
+  this.fractions = new Map();
 
   this.getDrawings = function() {
     return this.drawings;
