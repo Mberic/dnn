@@ -1,6 +1,6 @@
 {
-  "name": "@dao-library/database",
-  "version": "1.3.0",
+  "name": "@dnn/database",
+  "version": "1.0.0",
   "description": "",
   "type": "module",
   "keywords": [],

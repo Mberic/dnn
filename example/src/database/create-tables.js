@@ -24,12 +24,12 @@ closeDatabaseConnection();
 function createDnnTable() {
     return `
       CREATE TABLE IF NOT EXISTS Dnn (
-        name PRIMARY KEY VARCHAR(255) NOT NULL,
+        name VARCHAR(255) PRIMARY KEY,
         description TEXT,
         creator VARCHAR(255) NOT NULL,
         source_code TEXT NOT NULL,
         size VARCHAR(255),
-        version VARCHAR(50) UNIQUE NOT NULL
+        version VARCHAR(50)
       );
     `;
   }
@@ -37,9 +37,9 @@ function createDnnTable() {
 
   function createDrawingTable() {
     return `
-      CREATE TABLE IF NOT EXISTS Drawing
+      CREATE TABLE IF NOT EXISTS Drawing(
         name VARCHAR(255) PRIMARY KEY,
-        dnn VARCHAR(255) NOT NULL,
+        dnn VARCHAR(255)
       );
     `;
   }
@@ -48,7 +48,7 @@ function createDnnTable() {
     return `
       CREATE TABLE IF NOT EXISTS Fraction (
         name VARCHAR(255) PRIMARY KEY,
-        drawing VARCHAR(255),
+        drawing VARCHAR(255)
       );
     `;
   }
