@@ -68,7 +68,7 @@ async function action_proxy(payload, address){
           <meta charset="UTF-8">
           <meta name="viewport" content="width=device-width, initial-scale=1.0">
           <title>p5.js Code</title>
-          <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+          <script src="../node_modules/p5/lib/p5.js"></script>
           <script>${jsCode}</script>
         </head>
         <body>
@@ -96,12 +96,12 @@ async function action_proxy(payload, address){
         for (const x of fractionsMap.values()) {
           fractionsValues.push(x);
         }
-        registerFraction (fractionsValues, drawings);
+        await registerFraction (fractionsValues, drawings);
       } {
         console.log("\nNo fractions\n")
       }
      
-      registerDrawing (drawings, dnn_name);
+      await registerDrawing (drawings, dnn_name);
       result = await registerDNN(params);
 
       // Wait for the page to render
