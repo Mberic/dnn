@@ -64,7 +64,13 @@ function Circle(inX, inY) {
   this.y = inY;
   this.r = 75;
   this.col = color(255, 150);
-    
+  
+  this.intersects = function (other) {
+    // if the distance between the two circles is less
+    // than both of radii added together, then they overlap
+    return dist(this.x, this.y, other.x, other.y) < this.r + other.r;
+  }
+
   this.display = function () {
     noStroke(0);
     fill(this.col);
@@ -83,16 +89,18 @@ async function registerDrawing(drawings, dnn){
     
     if (allInstancesOfCircle) {
       if (checkCircleIntersect(drawings)){
-        console.log("Intersection in one or more Circle instances!");
+        console.log("\nIntersection in one or more Circle instances!\n");
       } else {
         for (const element of drawings) {
-          await _registerFraction(element, dnn);
+          await _registerDrawing(element, dnn);
         }
       }
     } else {
-      console.log("One or more objects NOT a Circle instance");
+      console.log("\nOne or more objects NOT a Circle instance!\n");
     }
-  } 
+  } else {
+    console.log("\nNo drawings submitted!\n");
+  }
 
 }
 
@@ -106,14 +114,14 @@ async function registerFraction(fractions, drawing){
     
     if (allInstancesOfCircle) {
       if (checkCircleIntersect(fractions)){
-        console.log("Intersection in one or more Circle instances!");
+        console.log("\nIntersection in one or more Circle instances!\n");
       } else {
         for (const element of fractions) {
           await _registerFraction(element, drawing);
         }
       }
     } else {
-      console.log("One or more objects NOT a Circle instance");
+      console.log("\nOne or more objects NOT a Circle instance\n");
     }
   } 
 

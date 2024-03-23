@@ -1,13 +1,25 @@
+function DNN(){
+  this.drawings = [];
+  this.fractions = new Map();
+
+  this.getDrawings = function() {
+    return this.drawings;
+  }
+  
+  this.getFractions = function(){
+    return this.fractions;
+  }
+}
 
 const dnn = new DNN();
 const circles = [];
-const numCircles = 10;
 
 function setup() { 
   createCanvas(600, 600);
   
   circles[0] = new Circle(220, 300);
   circles[1] = new Circle(100, 350);
+  dnn.drawings = circles;
 } 
 
 function draw() { 
@@ -44,18 +56,5 @@ function Circle(inX, inY) {
     noStroke(0);
     fill(this.col);
     ellipse(this.x, this.y, this.r * 2, this.r * 2);
-  }
-}
-
-function DNN(){
-  this.drawings = [];
-  this.fractions = new Map();
-
-  this.getDrawings = function() {
-    return this.drawings;
-  }
-  
-  this.getFractions = function(){
-    return this.fractions;
   }
 }

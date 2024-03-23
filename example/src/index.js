@@ -79,20 +79,30 @@ async function action_proxy(payload, address){
       // Set the content of the page to the HTML content
       await page.setContent(htmlContent);
 
+      const dnn_name = params.name;
+      const fractionsValues = [];
+
       // Evaluate the JavaScript code in the page context to call getDrawings function
       const drawings = await page.evaluate(() => {
-        const dnn = new DNN();
         return dnn.getDrawings();
       });
       
             // Evaluate the JavaScript code in the page context to call getDrawings function
-      const fractions = await page.evaluate(() => {
-        const dnn = new DNN();
+      const fractionsMap = await page.evaluate(() => {
         return dnn.getFractions();
       });
 
-      console.log("Drawings:", drawings);
-      console.log("FRactions:", fractions);
+      if ( fractionsMap.size > 0 ){
+        for (const x of fractionsMap.values()) {
+          fractionsValues.push(x);
+        }
+        registerFraction (fractionsValues, drawings);
+      } {
+        console.log("\nNo fractions\n")
+      }
+     
+      registerDrawing (drawings, dnn_name);
+      result = await registerDNN(params);
 
       // Wait for the page to render
       await new Promise(resolve => setTimeout(resolve, 2000)); // Adjust the timeout as needed
@@ -104,18 +114,6 @@ async function action_proxy(payload, address){
       await browser.close();
     })();
     
-      // const dnn_name = params.name;
-      // const drawings = dnn.getDrawings();
-      // const fractionsMap = getFractions();
-      // const fractionsValues = [];
-      
-      // for (const x of fractionsMap.values()) {
-      //   fractionsValues.push(x);
-      // }
-
-      // registerDrawing (drawings, dnn_name);
-      // registerFraction (fractionsValues, drawings);
-      // result = await registerDNN(params);
       break;
     case "transferDrawing":
       result = transferDrawing(...params);
