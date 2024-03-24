@@ -91,5 +91,5 @@ Endgame: Launch to Cartesi mainnet
 
 ## References 
 
-[Collision Detection](https://happycoding.io/tutorials/processing/collision-detection) 
-[Hamid Naderi Yeganeh](https://twitter.com/naderi_yeganeh?lang=en)
+- [Collision Detection](https://happycoding.io/tutorials/processing/collision-detection) 
+- [Hamid Naderi Yeganeh](https://twitter.com/naderi_yeganeh?lang=en)
