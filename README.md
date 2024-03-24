@@ -29,7 +29,7 @@ See the drawing below:
 
 If you found this image on a Marketplace like Opensea and the creator was asking for 5 ETH, your new question would be: HOW?
 
-Let's say we told you that it was the work of the mathematical artist, Hamid Naderi Yeganeh. Additionally, that he used the trigonometric equations below, you'd now want a piece of the pie. You can have a fraction or the whole :)
+Let's say we told you that it was the work of the mathematical artist, [Hamid Naderi Yeganeh](https://twitter.com/naderi_yeganeh?lang=en). Additionally, that he used the mathematical equations below, you'd now want a piece of the pie. You can have a fraction or the whole :)
 
 Now, let's say we created a 3D model of it & anyone who wants to see it dance pays a small fee - Ah!
 
@@ -92,3 +92,4 @@ Endgame: Launch to Cartesi mainnet
 ## References 
 
 [Collision Detection](https://happycoding.io/tutorials/processing/collision-detection) 
+[Hamid Naderi Yeganeh](https://twitter.com/naderi_yeganeh?lang=en)
