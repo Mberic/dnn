@@ -1,5 +1,6 @@
 # Digital Native NFTs
 
+![Digital Native NFT](./bird-in-flight.png)
 ## About 
 This is a PoC to introduce a novel approach to creating NFTs. The aim is to have every NFT derived from only geometric objects. You can use these geometric elements to draw anything from cars to birds. We choose to call these drawings Digital Native NFTs ( DNNs ). Using these shapes means we can't use images - whatever digital object we are building must have been built from scratch within a digital environment i.e. **natively**.
 
@@ -24,6 +25,7 @@ This leads to several challenges:
 
 See the drawing below:
 
+![hornbill bird](./hornbill_bird.png)
 
 If you found this image on a Marketplace like Opensea and the creator was asking for 5 ETH, your new question would be: HOW?
 
@@ -52,7 +54,8 @@ A fraction is a **discrete** entity within a drawing.
 
 ### Ownership 
 A fraction can be owned by at most 1 account. A drawing can be owned by more than one account if it has at least 2 fractions.
-Intersection 
+
+### Intersection 
 
 Fractionalization presents some challenges with ownership, particularly when it comes to asset transfer. How do we know that the fractionated part isn't a part of another fraction?
 
