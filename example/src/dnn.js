@@ -85,9 +85,9 @@ async function registerDrawing(drawings, dnn){
 
   if (numberOfDrawings > 0) {
 
-    const allInstancesOfCircle = drawings.every (element => element instanceof Circle);
+    // const allInstancesOfCircle = drawings.every (element => element instanceof Circle);
     
-    if (allInstancesOfCircle) {
+    // if (allInstancesOfCircle) {
       if (checkCircleIntersect(drawings)){
         console.log("\nIntersection in one or more Circle instances!\n");
       } else {
@@ -95,9 +95,9 @@ async function registerDrawing(drawings, dnn){
           await _registerDrawing(element, dnn);
         }
       }
-    } else {
-      console.log("\nOne or more objects NOT a Circle instance!\n");
-    }
+    // } else {
+    //   console.log("\nOne or more objects NOT a Circle instance!\n");
+    // }
   } else {
     console.log("\nNo drawings submitted!\n");
   }

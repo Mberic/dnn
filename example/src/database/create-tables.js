@@ -38,7 +38,7 @@ function createDnnTable() {
   function createDrawingTable() {
     return `
       CREATE TABLE IF NOT EXISTS Drawing(
-        name VARCHAR(255) PRIMARY KEY,
+        name VARCHAR(255),
         dnn VARCHAR(255)
       );
     `;
@@ -47,7 +47,7 @@ function createDnnTable() {
   function createFractionTable() {
     return `
       CREATE TABLE IF NOT EXISTS Fraction (
-        name VARCHAR(255) PRIMARY KEY,
+        name VARCHAR(255),
         drawing VARCHAR(255)
       );
     `;
