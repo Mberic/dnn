@@ -5,6 +5,7 @@
   "description": "JS DApp",
   "dependencies": {
     "ethers": "^6.7.1",
+    "p5": "^1.9.2",
     "puppeteer": "^22.6.0"
   },
   "devDependencies": {
